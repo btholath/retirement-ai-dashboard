@@ -1,36 +1,102 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# retirement-ai-dashboard
 
-## Getting Started
+![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=nextdotjs)
+![TypeScript](https://img.shields.io/badge/TypeScript-strict-blue?logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4-38bdf8?logo=tailwindcss)
+![Built with Claude Code](https://img.shields.io/badge/Built%20with-Claude%20Code-orange)
+![License](https://img.shields.io/badge/license-MIT-green)
 
-First, run the development server:
+> AI-assisted retirement dashboard built with Next.js 16, TypeScript, and Claude Code. Demonstrates agentic workflows, MCP integration, and prompt engineering for retirement annuity and participant account management.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## What this demonstrates
+
+| Capability | Implementation |
+|---|---|
+| **Claude Code** | End-to-end feature generation, refactoring, and code review via CLI |
+| **Prompt Engineering** | Structured prompts for code generation, review, and architectural guidance |
+| **Agentic Architecture** | `CLAUDE.md` + `AGENTS.md` rules drive consistent AI-assisted development |
+| **Next.js 16** | App Router, React Server Components, file-based routing |
+| **TypeScript** | Strict mode, interfaces, runtime type guards — no unsafe casts |
+| **Retirement Domain** | Participant accounts, annuity balances, projection-ready data model |
+
+---
+
+## Tech stack
+
+- **Framework:** Next.js 16 (App Router)
+- **Language:** TypeScript 5 (strict)
+- **Styling:** Tailwind CSS v4
+- **AI tooling:** Claude Code (Anthropic) with MCP integration
+- **Runtime:** Node.js 20+
+
+---
+
+## Project structure
+
+```
+├── app/
+│   ├── layout.tsx          # Root layout with Geist font
+│   └── page.tsx            # Homepage — server component
+├── src/
+│   ├── components/
+│   │   └── ParticipantCard.tsx   # Reusable participant card
+│   ├── data/
+│   │   └── participants.json     # Seed data
+│   ├── lib/
+│   │   ├── formatters.ts         # formatCurrency, pluralize
+│   │   └── participants.ts       # getParticipants() with type guard
+│   └── types/
+│       └── participant.ts        # Participant interface
+├── scripts/
+│   └── push-to-github.sh         # Idempotent GitHub push script
+├── CLAUDE.md                     # AI architect rules and domain context
+└── AGENTS.md                     # Agentic Next.js conventions
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Local setup
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# 1. Install dependencies
+npm install
 
-## Learn More
+# 2. Start the dev server
+npm run dev
 
-To learn more about Next.js, take a look at the following resources:
+# 3. Open in browser
+open http://localhost:3000
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Built with Claude Code
 
-## Deploy on Vercel
+This project was built interactively using [Claude Code](https://claude.ai/code), Anthropic's AI-powered CLI. The workflow demonstrates:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **Feature generation** — homepage, types, services, and components generated from a structured prompt
+2. **Code review** — staff-engineer-level review identifying unsafe casts, module-scope optimizations, and naming conventions
+3. **Refactoring** — type guard replacing `as` cast, formatter extracted to `lib/`, `Intl.NumberFormat` hoisted to module scope
+4. **Git workflow** — conventional commits created and pushed via an AI-generated idempotent shell script
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+See [`06_prompt_engineering.md`](./06_prompt_engineering.md) for the exact prompts used.
+
+---
+
+## Roadmap
+
+- [ ] Retirement projection calculator (`src/lib/projections.ts`)
+- [ ] Annuity processing service
+- [ ] REST API routes (`app/api/participants/`)
+- [ ] Vitest unit tests for all lib functions
+- [ ] GitHub Actions CI (typecheck + lint)
+- [ ] Participant detail page with projection chart
+
+---
+
+## Related
+
+- Blog: [blog.retiriq.com](https://blog.retiriq.com)
+- GitHub: [@btholath](https://github.com/btholath)
