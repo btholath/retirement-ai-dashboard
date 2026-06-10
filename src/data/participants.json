@@ -1,0 +1,14 @@
+[
+  {
+    "id": "P1001",
+    "name": "John Smith",
+    "age": 58,
+    "balance": 850000
+  },
+  {
+    "id": "P1002",
+    "name": "Mary Jones",
+    "age": 45,
+    "balance": 420000
+  }
+]
